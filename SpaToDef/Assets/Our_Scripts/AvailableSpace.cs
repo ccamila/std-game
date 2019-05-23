@@ -25,7 +25,7 @@ public class AvailableSpace : MonoBehaviour
         }
 
         GameObject turretToBuild = buildManager.getTurretToBuild();
-        this.transform.gameObject.SetActive(false);
+        Destroy(gameObject);
 
         turret = (GameObject)Instantiate(turretToBuild, transform.position, transform.rotation);
         buildManager.SetTurretToBuild(null);

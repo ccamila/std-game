@@ -1,5 +1,4 @@
 ﻿
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Shop : MonoBehaviour
@@ -14,5 +13,11 @@ public class Shop : MonoBehaviour
     {
         Debug.Log("Standard Turret Purchased");
         buildManager.SetTurretToBuild(buildManager.standardTurretPrefab);
+    }
+
+    public void PurchaseRadialTurret()
+    {
+        Debug.Log("Radial Turret Purchased");
+        buildManager.SetTurretToBuild(buildManager.radialTurretPrefab);
     }
 }
