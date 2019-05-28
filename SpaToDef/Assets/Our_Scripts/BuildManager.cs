@@ -6,6 +6,7 @@ public class BuildManager : MonoBehaviour
     public static BuildManager instance;
 
     private GameObject turretToBuild;
+    public bool enable;
 
     void Awake()
     {
