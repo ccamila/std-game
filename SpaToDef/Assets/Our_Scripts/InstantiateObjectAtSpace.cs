@@ -43,7 +43,7 @@ public class InstantiateObjectAtSpace : MonoBehaviour
             
             Collider[] hitColliders = Physics.OverlapBox(hit.point, turretToBuild.transform.localScale , Quaternion.identity, layerMask);
             Debug.Log(hitColliders.Length);
-            if (hitColliders.Length == 0 && hit.collider.gameObject.layer != layerMaskPath)
+            if (hitColliders.Length == 0 && !hit.collider.transform.gameObject.GetComponentInChildren<MeshCollider>() )
             {
                 
                 turret = (GameObject)Instantiate(turretToBuild, hit.point, Quaternion.identity);
