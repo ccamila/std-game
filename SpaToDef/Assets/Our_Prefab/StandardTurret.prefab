@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 4557296703362933133}
   - component: {fileID: 2406038772397983330}
   - component: {fileID: 4155657947154624593}
+  - component: {fileID: 469930102412818999}
   m_Layer: 9
   m_Name: StandardTurret
   m_TagString: turret
@@ -297,6 +298,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 11.165847, y: 8.756298, z: 11.165847}
   m_Center: {x: 0, y: 4.1237717, z: 0}
+--- !u!114 &469930102412818999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4554121399303535271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739e8fdc0ac0b3b4aba3c3cb6fd9b4ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4554121399459863213
 GameObject:
   m_ObjectHideFlags: 0
