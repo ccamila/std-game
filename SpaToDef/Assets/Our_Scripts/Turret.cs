@@ -3,22 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Turret : MonoBehaviour{
+
+    //Atributos
+    public float fireRate = 1f;
+    private float fireCountdown = 0f;
+
+    //Unity
     private Transform target;
     public float range = 15f;
     public string enemyTag = "Enemy";
     public Transform partToRotate;
     public float turnSpeed = 10f; //Velocidade de 'girada' da torre.
+    public GameObject bulletPrefab;
+    public Transform fire;
+    
 
-    public float fireRate  = 1f;
-    private float firecountdown = 0f; 
 
-
-    private void Start()
+    void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
-    private void UpdateTarget() {
+    void UpdateTarget() {
         //Metodo que procura um alvo, procura o mais próximo e checa se ele está no 'range'
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         float shortDistance = Mathf.Infinity; //Guarda a menor distância
@@ -38,7 +44,7 @@ public class Turret : MonoBehaviour{
 
         }
     }
-    private void Update()
+    void Update()
     {
         if (target == null) return;
         //Achando um alvo.
@@ -47,14 +53,27 @@ public class Turret : MonoBehaviour{
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation,pointRotation, Time.deltaTime * turnSpeed).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f); //Só roda em torno do eixo y
         
+        if (fireCountdown <= 0)
+        {
+            Shoot();
+            fireCountdown = 1f / fireRate;
+        }
 
+        fireCountdown -= Time.deltaTime;
+    }
 
+    void Shoot()
+    {
+        GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, fire.position, fire.rotation);
+        Bullet bullet = bulletGo.GetComponent<Bullet>();
+        if (!bullet)
+        {
+            bullet.Chase(target);
+        }
     }
 
 
-
-
-    private void OnDrawGizmosSelected(){
+    void OnDrawGizmosSelected(){
         //Função que desenha um range de tiro para a torre.       
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);    
