@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour{
 
     private Transform target;
     public float speed = 70f;
+    public GameObject impactFX;
     public void Chase(Transform t)
     {
         target = t;
@@ -19,19 +20,19 @@ public class Bullet : MonoBehaviour{
             return;
         }
 
-        Vector3 dir = target.position - transform.position;
-        float distance = speed * Time.deltaTime;
+        Vector3 dir = target.position - transform.position; //fim - inicio
+        float distance = speed * Time.deltaTime; //quanto 
 
-        if (dir.magnitude <= distance)
-        {
+        if (dir.magnitude <= distance){
             Hit();
             return;
         }
         transform.Translate(dir.normalized * distance, Space.World); //Mover a umavelocidade constante
     }
 
-    void Hit()
-    {
-        Destroy(gameObject);
+    void Hit(){
+        GameObject fxInst = (GameObject)Instantiate(impactFX, transform.position, transform.rotation);
+        Destroy(fxInst, 2f);
+        Destroy(target.gameObject);
     }
 }
