@@ -16,13 +16,11 @@ public class Turret : MonoBehaviour{
     public float turnSpeed = 10f; //Velocidade de 'girada' da torre.
     public GameObject bulletPrefab;
     public Transform fire;
+    public TurretUI turretUI;
     
 
 
-    void Start()
-    {
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
-    }
+   
 
     void UpdateTarget() {
         //Metodo que procura um alvo, procura o mais próximo e checa se ele está no 'range'
@@ -78,6 +76,17 @@ public class Turret : MonoBehaviour{
         //Função que desenha um range de tiro para a torre.       
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);    
+    }
+
+    private void OnMouseDown()
+    {
+        if(turretUI.getTarget() == gameObject)
+        {
+            turretUI.DeselectTurret();
+            
+            return;
+        }
+        turretUI.setTarget(gameObject);
     }
 
 }

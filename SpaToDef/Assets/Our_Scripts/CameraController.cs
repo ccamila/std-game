@@ -1,16 +1,22 @@
 ﻿using UnityEngine;
 
 public class CameraController : MonoBehaviour{
-    private bool allowMovement = true;
+    private bool allowMovement = false;
     public float panSpeed = 10f;
     public float panBorderT = 1f;
     public float scrollSpeed = 5f;
     private float minY = 10f;
     private float maxY = 80f;
+
+    bool right = false;
+    bool left = false;
+    bool up = false;
+    bool down = false;
+
     void Update()
     {
-        if (Input.GetMouseButton(0)) allowMovement = !allowMovement;
-        if (!allowMovement) return;
+        //if (Input.GetMouseButton(0)) allowMovement = !allowMovement;
+        //if (!allowMovement) return;
 
 
         if (Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panBorderT)
@@ -42,7 +48,68 @@ public class CameraController : MonoBehaviour{
 
         transform.position = currentPosition;
 
-    } 
+        move();
+    }
 
+    void move()
+    {
+        if (right)
+        {
+            transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.World);
+        }
+        else if (left)
+        {
+            transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
+        }
+        else if (up)
+        {
+            transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
+        }
+        else if (down)
+        {
+            transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.World);
+        }
+    }
 
+    public void down_right()
+    {
+
+        right = true;
+    }
+
+    public void up_right()
+    {
+        right = false;
+    }
+
+    public void up_left()
+    {
+        left = false;
+    }
+
+    public void down_left()
+    {
+        left = true;
+
+    }
+
+    public void up_up()
+    {
+        up = false;
+    }
+
+    public void down_up()
+    {
+        up = true;
+    }
+
+    public void up_down()
+    {
+        down = false;
+    }
+
+    public void down_down()
+    {
+        down = true;
+    }
 }

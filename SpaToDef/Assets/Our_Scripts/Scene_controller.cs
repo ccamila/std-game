@@ -17,16 +17,23 @@ public class Scene_controller : MonoBehaviour
         
     }
 
-    public void menu(){
-
+    public void Menu()
+    {
         SceneManager.LoadScene("Menu");
-
     }
 
-    public void level_1(){
-
+    public void Level_1()
+    {
         SceneManager.LoadScene("Cena_teste");
+    }
+
+    public void SelectLevel()
+    {
 
     }
 
+    public void Options()
+    {
+
+    }
 }

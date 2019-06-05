@@ -3,10 +3,15 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
+    public TurretBlueprint standardTurret;
+    public TurretBlueprint radialTurret;
+
     BuildManager buildManager;
+
+
     public ChangeColor changeColor;
-    public GameObject stdT;
-    public GameObject rdT;
+    public GameObject standardTurretButton;
+    public GameObject radialTurretButton;
     
 
 
@@ -14,21 +19,22 @@ public class Shop : MonoBehaviour
     {
         buildManager = BuildManager.instance;
     }
-    public void purchaseStandardTurret()
+
+    public void SelectStandardTurret()
     {
-        Debug.Log("Standard Turret Purchased");
-        buildManager.SetTurretToBuild(buildManager.standardTurretPrefab);
+        
+        buildManager.SelectTurretToBuild(standardTurret);
         buildManager.enable = true;
-        changeColor.SelectedColor(stdT);
+        changeColor.SelectedColor(standardTurretButton);
         
     }
 
-    public void PurchaseRadialTurret()
+    public void SelectRadialTurret()
     {
-        Debug.Log("Radial Turret Purchased");
-        buildManager.SetTurretToBuild(buildManager.radialTurretPrefab);
+        
+        buildManager.SelectTurretToBuild(radialTurret);
         buildManager.enable = true;
-        changeColor.SelectedColor(rdT);
+        changeColor.SelectedColor(radialTurretButton);
     }
 
 }
