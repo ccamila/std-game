@@ -17,6 +17,7 @@ public class Turret : MonoBehaviour{
     public GameObject bulletPrefab;
     public Transform fire;
     public TurretUI turretUI;
+<<<<<<< HEAD
 
     private void Start()
     {
@@ -24,6 +25,17 @@ public class Turret : MonoBehaviour{
         turretUI = turretUIobject.GetComponent<TurretUI>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
+=======
+
+    private void Start()
+    {
+        GameObject turretUIobject = GameObject.FindGameObjectWithTag("TurretUI");
+        turretUI = turretUIobject.GetComponent<TurretUI>();
+        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+    }
+
+
+>>>>>>> 65c70bd99ac80a4db48579b64bce4019bfa0ad5c
 
     void UpdateTarget() {
         //Metodo que procura um alvo, procura o mais próximo e checa se ele está no 'range'
