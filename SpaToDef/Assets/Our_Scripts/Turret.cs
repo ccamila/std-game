@@ -17,10 +17,15 @@ public class Turret : MonoBehaviour{
     public GameObject bulletPrefab;
     public Transform fire;
     public TurretUI turretUI;
-    
+
+    private void Start()
+    {
+        GameObject turretUIobject = GameObject.FindGameObjectWithTag("TurretUI");
+        turretUI = turretUIobject.GetComponent<TurretUI>();
+        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+    }
 
 
-   
 
     void UpdateTarget() {
         //Metodo que procura um alvo, procura o mais próximo e checa se ele está no 'range'
