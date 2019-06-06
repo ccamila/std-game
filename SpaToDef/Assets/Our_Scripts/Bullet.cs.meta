@@ -3,7 +3,9 @@ guid: 697ea22e8fb20ba4ebd67e729c43bd34
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - impactFX: {fileID: 3208693343874010227, guid: 5f9236070c93e6741a9b3ccdcd1eadbc,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
