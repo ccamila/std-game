@@ -17,13 +17,10 @@ public class Turret : MonoBehaviour{
     public GameObject bulletPrefab;
     public Transform fire;
     public TurretUI turretUI;
+    
 
-    private void Start()
-    {
-        GameObject turretUIobject = GameObject.FindGameObjectWithTag("TurretUI");
-        turretUI = turretUIobject.GetComponent<TurretUI>();
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
-    }
+
+   
 
     void UpdateTarget() {
         //Metodo que procura um alvo, procura o mais próximo e checa se ele está no 'range'
@@ -83,13 +80,13 @@ public class Turret : MonoBehaviour{
 
     private void OnMouseDown()
     {
-        if(turretUI.GetTarget() == gameObject)
+        if(turretUI.getTarget() == gameObject)
         {
             turretUI.DeselectTurret();
             
             return;
         }
-        turretUI.SetTarget(gameObject);
+        turretUI.setTarget(gameObject);
     }
 
 }

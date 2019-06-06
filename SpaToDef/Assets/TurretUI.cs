@@ -7,7 +7,7 @@ public class TurretUI : MonoBehaviour
     private GameObject target;
     public GameObject ui;
 
-    public void SetTarget(GameObject _target)
+    public void setTarget(GameObject _target)
     {
         target = _target;
 
@@ -15,7 +15,7 @@ public class TurretUI : MonoBehaviour
         ui.SetActive(true);
     }
 
-    public GameObject GetTarget()
+    public GameObject getTarget()
     {
         return target;
     }
@@ -30,6 +30,4 @@ public class TurretUI : MonoBehaviour
     {
         ui.SetActive(false);
     }
-
-   
 }

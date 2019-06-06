@@ -310,15 +310,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739e8fdc0ac0b3b4aba3c3cb6fd9b4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
-  range: 15
-  enemyTag: Enemy
-  partToRotate: {fileID: 7057869494290128024}
-  turnSpeed: 10
-  bulletPrefab: {fileID: 2213379134577502600, guid: 7261cc1247cf1444eac6f892ff5d3a09,
-    type: 3}
-  fire: {fileID: 4557296701327807389}
-  turretUI: {fileID: 0}
 --- !u!1 &4554121399459863213
 GameObject:
   m_ObjectHideFlags: 0

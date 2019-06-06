@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6353773920028825635
+--- !u!1 &2327467800623633380
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5924375730691605552}
-  - component: {fileID: 3337234286383598991}
-  - component: {fileID: 188563433400962326}
-  - component: {fileID: 4496462507928493285}
+  - component: {fileID: 3050744836567126007}
+  - component: {fileID: 6210970707720357448}
+  - component: {fileID: 8861986087893944017}
+  - component: {fileID: 5046095119402522402}
   m_Layer: 9
-  m_Name: StandardTower3
+  m_Name: StandardTower3 1
   m_TagString: turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5924375730691605552
+--- !u!4 &3050744836567126007
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6353773920028825635}
+  m_GameObject: {fileID: 2327467800623633380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.063, z: 0}
   m_LocalScale: {x: 0.6, y: 0.5, z: 0.6}
   m_Children:
-  - {fileID: 1750390287918706565}
+  - {fileID: 6929723316329604162}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &3337234286383598991
+--- !u!54 &6210970707720357448
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6353773920028825635}
+  m_GameObject: {fileID: 2327467800623633380}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -50,42 +50,45 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &188563433400962326
+--- !u!65 &8861986087893944017
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6353773920028825635}
+  m_GameObject: {fileID: 2327467800623633380}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4496462507928493285
+--- !u!114 &5046095119402522402
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6353773920028825635}
+  m_GameObject: {fileID: 2327467800623633380}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 739e8fdc0ac0b3b4aba3c3cb6fd9b4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 1
   range: 15
   enemyTag: Enemy
   partToRotate: {fileID: 0}
   turnSpeed: 10
-  fireRate: 1
---- !u!1001 &1748688909923508617
+  bulletPrefab: {fileID: 0}
+  fire: {fileID: 0}
+  turretUI: {fileID: 0}
+--- !u!1001 &6928057233838615118
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 5924375730691605552}
+    m_TransformParent: {fileID: 3050744836567126007}
     m_Modifications:
     - target: {fileID: 1000012174300454, guid: 8a4fca54c9faa3449bcff12193992420, type: 3}
       propertyPath: m_Name
@@ -155,16 +158,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 2395112682178482817, guid: 8a4fca54c9faa3449bcff12193992420,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6773271935798875077, guid: 8a4fca54c9faa3449bcff12193992420,
         type: 3}
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 1000012338640140, guid: 8a4fca54c9faa3449bcff12193992420, type: 3}
+    - target: {fileID: 1000010336256734, guid: 8a4fca54c9faa3449bcff12193992420, type: 3}
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 1000010336256734, guid: 8a4fca54c9faa3449bcff12193992420, type: 3}
+    - target: {fileID: 1000012338640140, guid: 8a4fca54c9faa3449bcff12193992420, type: 3}
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
@@ -180,16 +188,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 2395112682178482817, guid: 8a4fca54c9faa3449bcff12193992420,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a4fca54c9faa3449bcff12193992420, type: 3}
---- !u!4 &1750390287918706565 stripped
+--- !u!4 &6929723316329604162 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000010737274380, guid: 8a4fca54c9faa3449bcff12193992420,
     type: 3}
-  m_PrefabInstance: {fileID: 1748688909923508617}
+  m_PrefabInstance: {fileID: 6928057233838615118}
   m_PrefabAsset: {fileID: 0}
