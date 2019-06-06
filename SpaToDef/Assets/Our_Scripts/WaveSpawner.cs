@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
+ 
     public Transform enemyPrefab;
     public Transform starterPoint;
 
-    public float timeWaves = 4f; //Tempo entre as waves
+    public float timeWaves = 10f; //Tempo entre as waves
     private float countdown = 2f;
     private int waveNumber = 0;
 
@@ -42,6 +43,7 @@ public class WaveSpawner : MonoBehaviour
     void SpawnEnemy()
     {
         Instantiate(enemyPrefab, starterPoint.position, starterPoint.rotation);
+  
     }
 
 }
