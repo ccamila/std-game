@@ -5,8 +5,8 @@ public class CameraController : MonoBehaviour{
     public float panSpeed = 10f;
     public float panBorderT = 1f;
     public float scrollSpeed = 5f;
-    private float minY = 10f;
-    private float maxY = 80f;
+    private float minY = 1f;
+    private float maxY = 10f;
 
     bool right = false;
     bool left = false;
@@ -15,8 +15,8 @@ public class CameraController : MonoBehaviour{
 
     void Update()
     {
-        //if (Input.GetMouseButton(0)) allowMovement = !allowMovement;
-        //if (!allowMovement) return;
+        if (Input.GetMouseButton(0)) allowMovement = !allowMovement;
+        if (!allowMovement) return;
 
 
         if (Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panBorderT)

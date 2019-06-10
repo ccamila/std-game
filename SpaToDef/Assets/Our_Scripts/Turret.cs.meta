@@ -3,7 +3,12 @@ guid: 739e8fdc0ac0b3b4aba3c3cb6fd9b4ef
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - partToRotate: {instanceID: 0}
+  - bulletPrefab: {fileID: 2213379134577502600, guid: 7261cc1247cf1444eac6f892ff5d3a09,
+      type: 3}
+  - fire: {instanceID: 0}
+  - turretUI: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

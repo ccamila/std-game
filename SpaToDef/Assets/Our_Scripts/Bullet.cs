@@ -34,5 +34,6 @@ public class Bullet : MonoBehaviour{
         GameObject fxInst = (GameObject)Instantiate(impactFX, transform.position, transform.rotation);
         Destroy(fxInst, 2f);
         Destroy(target.gameObject);
+        PlayerStats.money += 100;
     }
 }
