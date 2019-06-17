@@ -14,7 +14,11 @@ public class WaveSpawner : MonoBehaviour
 
     public Text waveCount;
 
-         
+    private void Start()
+    {
+        countdown = timeWaves;
+    }
+
     void Update()
     {
 
