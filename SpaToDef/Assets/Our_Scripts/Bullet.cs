@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour{
     void Hit(){
         GameObject fxInst = (GameObject)Instantiate(impactFX, transform.position, transform.rotation);
         Destroy(fxInst, 2f);
-        Destroy(target.gameObject);
-        PlayerStats.money += 100;
+        target.gameObject.GetComponent<Enemy>().Die();
+        
     }
 }

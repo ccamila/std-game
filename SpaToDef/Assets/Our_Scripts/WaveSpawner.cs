@@ -21,14 +21,19 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
-
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (countdown <= 0f)
         {
+            waveCount.gameObject.SetActive(false);
             StartCoroutine(Spawn());
             countdown = timeWaves;
+            
         }
-
-        countdown -= Time.deltaTime;
+        if (enemies.Length == 0)
+        {
+            waveCount.gameObject.SetActive(true);
+            countdown -= Time.deltaTime;
+        }
         waveCount.text = Mathf.Round(countdown).ToString();
     }
 
@@ -38,7 +43,7 @@ public class WaveSpawner : MonoBehaviour
         for (int i = 0; i < waveNumber; i++)
         {
             SpawnEnemy();
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
         }
 
     }

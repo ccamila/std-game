@@ -42,7 +42,7 @@ ParticleSystem:
   m_GameObject: {fileID: 3191374184815395581}
   serializedVersion: 6
   lengthInSec: 2
-  simulationSpeed: 2
+  simulationSpeed: 10
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -4721,7 +4721,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3191374185710096486}
-  - component: {fileID: 3191374185710096487}
+  - component: {fileID: 1597162674758576331}
+  - component: {fileID: 1610394655485438036}
   m_Layer: 0
   m_Name: PulseWave
   m_TagString: turret
@@ -4743,20 +4744,31 @@ Transform:
   m_Father: {fileID: 4290317432040119914}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &3191374185710096487
-MeshCollider:
+--- !u!135 &1597162674758576331
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3191374185710096485}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Radius: 0.00001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1610394655485438036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3191374185710096485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5d4db5ce9bad7a429cf05d46d7f0997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8321790365278942803
 GameObject:
   m_ObjectHideFlags: 0
@@ -4851,9 +4863,8 @@ MonoBehaviour:
   fireRate: 3
   range: 1
   enemyTag: Enemy
-  bulletPrefab: {fileID: 0}
-  fire: {fileID: 0}
   turretUI: {fileID: 0}
+  objCol: {fileID: 3191374185710096485}
 --- !u!1001 &7823041459112480459
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class RadialHit : MonoBehaviour
 {
     private void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "turret")
-            Destroy(gameObject);
+        if (col.gameObject.tag == "Enemy")
+            col.gameObject.GetComponent<Enemy>().Die();
     }
 }

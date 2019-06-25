@@ -43,6 +43,11 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void Die()
+    {
+        Destroy(gameObject);
+        PlayerStats.money += 100;
+    }
 }
 
 

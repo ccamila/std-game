@@ -6,28 +6,28 @@ public class TurretRadial : MonoBehaviour
 {
 
     //Atributos
-    public float fireRate = 3f;
-    private float fireCountdown = 0f;
+    public float fireRate = 0.01f;
+    float tempoTiro = 5f;
 
     //Unity
     private Transform target;
     public float range = 15f;
     public string enemyTag = "Enemy";
-    public GameObject bulletPrefab;
-    public Transform fire;
+    
+   
     public TurretUI turretUI;
     private ParticleSystem ps;
+    public GameObject objCol;
 
     private void Start()
     {
         GetComponentInChildren<RadialParticlesProperties>().setRange(range);
+        ps = GetComponentInChildren<ParticleSystem>();
+        ps.Stop();
         GameObject turretUIobject = GameObject.FindGameObjectWithTag("TurretUI");
         turretUI = turretUIobject.GetComponent<TurretUI>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
-
-
-
 
 
     void UpdateTarget()
@@ -55,27 +55,34 @@ public class TurretRadial : MonoBehaviour
     void Update()
     {
         if (target == null) return;
-
-        if (fireCountdown <= 0)
+        
+        if (tempoTiro >= 0.5f)
         {
             Shoot();
-            fireCountdown = 1f / fireRate;
+            tempoTiro = 0f;
+            
         }
-
-        fireCountdown -= Time.deltaTime;
+        tempoTiro += Time.deltaTime;
     }
 
     void Shoot()
     {
-        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, fire.position, fire.rotation);
-        Bullet bullet = bulletGO.GetComponent<Bullet>();
-
-        if (bullet != null)
-        {
-            bullet.Chase(target);
-        }
+        ps.Play();
+        StartCoroutine("IncreaseSize"); 
     }
 
+    IEnumerator IncreaseSize()
+    {
+        float tempo = 0f;
+        while (tempo < 0.5f)
+        {
+
+            tempo += Time.deltaTime;
+            objCol.GetComponent<SphereCollider>().radius += 0.5f;
+            yield return null;
+            objCol.GetComponent<SphereCollider>().radius = 0f;
+        }
+    }
 
     void OnDrawGizmosSelected()
     {
