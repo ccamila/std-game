@@ -10,19 +10,21 @@ public class Turret : MonoBehaviour{
 
     //Unity
     private Transform target;
-    public float range = 15f;
+    public float range = 2f;
     public string enemyTag = "Enemy";
     public Transform partToRotate;
     public float turnSpeed = 10f; //Velocidade de 'girada' da torre.
     public GameObject bulletPrefab;
     public Transform fire;
     public TurretUI turretUI;
+    public GameObject CircleRange;
 
     private void Start()
     {
         GameObject turretUIobject = GameObject.FindGameObjectWithTag("TurretUI");
         turretUI = turretUIobject.GetComponent<TurretUI>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        Instantiate(CircleRange,new Vector3(transform.position.x, transform.position.y + 0.25f, transform.position.z),Quaternion.identity,gameObject.transform);
     }
 
 

@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 1
-  range: 4
+  range: 2
   enemyTag: Enemy
   partToRotate: {fileID: 135134814503073530}
   turnSpeed: 10
@@ -86,6 +86,8 @@ MonoBehaviour:
     type: 3}
   fire: {fileID: 2802343082098416058}
   turretUI: {fileID: 0}
+  CircleRange: {fileID: 8316828043378360175, guid: cd42fe62bd0fd5a448a1f409d0518805,
+    type: 3}
 --- !u!114 &8802580961457610678
 MonoBehaviour:
   m_ObjectHideFlags: 0
