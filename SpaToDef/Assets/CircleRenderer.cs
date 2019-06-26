@@ -6,16 +6,14 @@ public class CircleRenderer : MonoBehaviour
 {
     
     int segments = 50;
-    [Range(0, 5)]
-    public float xradius;
-    [Range(0, 5)]
-    public float zradius;
+    
+    public float radius;
+    
     LineRenderer line;
 
     void Start()
     {
-        xradius = gameObject.GetComponentInParent<Turret>().range;
-        zradius = xradius;
+        radius = GameObject.FindGameObjectWithTag("TurretUI").GetComponent<TurretUI>().turretRange;
         line = gameObject.GetComponent<LineRenderer>();
 
         
@@ -33,8 +31,8 @@ public class CircleRenderer : MonoBehaviour
 
         for (int i = 0; i < (segments + 1); i++)
         {
-            x = Mathf.Sin(Mathf.Deg2Rad * angle) * xradius / transform.parent.lossyScale.x;
-            z = Mathf.Cos(Mathf.Deg2Rad * angle) * zradius / transform.parent.lossyScale.z;
+            x = Mathf.Sin(Mathf.Deg2Rad * angle) * radius ;
+            z = Mathf.Cos(Mathf.Deg2Rad * angle) * radius ;
 
             line.SetPosition(i, new Vector3(x, 0, z));
 

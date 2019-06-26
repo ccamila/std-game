@@ -11,22 +11,25 @@ public class TurretRadial : MonoBehaviour
 
     //Unity
     private Transform target;
-    public float range = 15f;
+    private float range;
     public string enemyTag = "Enemy";
     
    
     public TurretUI turretUI;
     private ParticleSystem ps;
     public GameObject objCol;
+    
 
     private void Start()
     {
+        range = GetComponent<TurretStats>().range;
         GetComponentInChildren<RadialParticlesProperties>().setRange(range);
         ps = GetComponentInChildren<ParticleSystem>();
         ps.Stop();
         GameObject turretUIobject = GameObject.FindGameObjectWithTag("TurretUI");
         turretUI = turretUIobject.GetComponent<TurretUI>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        
     }
 
 
@@ -99,6 +102,7 @@ public class TurretRadial : MonoBehaviour
 
             return;
         }
+        Destroy(turretUI.circle);
         turretUI.setTarget(gameObject);
     }
 

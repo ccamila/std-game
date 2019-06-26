@@ -6,4 +6,6 @@ public class TurretStats : MonoBehaviour
 {
     public int sellCost = 50;
     public readonly int upgradeCost;
+    public float range;
+    
 }

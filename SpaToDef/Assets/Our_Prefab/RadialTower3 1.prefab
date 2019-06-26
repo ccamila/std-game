@@ -4848,6 +4848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sellCost: 60
+  range: 1
 --- !u!114 &4469714223490163278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4865,6 +4866,8 @@ MonoBehaviour:
   enemyTag: Enemy
   turretUI: {fileID: 0}
   objCol: {fileID: 3191374185710096485}
+  CircleRange: {fileID: 8316828043378360175, guid: cd42fe62bd0fd5a448a1f409d0518805,
+    type: 3}
 --- !u!1001 &7823041459112480459
 PrefabInstance:
   m_ObjectHideFlags: 0

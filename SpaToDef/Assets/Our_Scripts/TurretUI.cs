@@ -6,12 +6,17 @@ public class TurretUI : MonoBehaviour
 {
     private GameObject target;
     public GameObject ui;
+    public GameObject CircleRange;
+    public GameObject circle;
+    public float turretRange = 1f;
+    
 
     public void setTarget(GameObject _target)
     {
         target = _target;
-
         transform.position = target.transform.position;
+        turretRange = target.GetComponent<TurretStats>().range;
+        circle = Instantiate(CircleRange, new Vector3(target.transform.position.x, target.transform.position.y + 0.25f, target.transform.position.z), Quaternion.identity);
         ui.SetActive(true);
     }
 
@@ -22,6 +27,7 @@ public class TurretUI : MonoBehaviour
 
     public void DeselectTurret()
     {
+        Destroy(circle);
         target = null;
         Hide();
     }
