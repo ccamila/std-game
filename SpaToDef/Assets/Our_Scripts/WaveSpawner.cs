@@ -13,6 +13,7 @@ public class WaveSpawner : MonoBehaviour
     private int waveNumber = 0;
 
     public Text waveCount;
+    public Button nextWave;
 
     private void Start()
     {
@@ -27,12 +28,13 @@ public class WaveSpawner : MonoBehaviour
             waveCount.gameObject.SetActive(false);
             StartCoroutine(Spawn());
             countdown = timeWaves;
-            
+            return;
         }
         if (enemies.Length == 0)
         {
             waveCount.gameObject.SetActive(true);
             countdown -= Time.deltaTime;
+            nextWave.gameObject.SetActive(true);  
         }
         waveCount.text = Mathf.Round(countdown).ToString();
     }
@@ -52,6 +54,12 @@ public class WaveSpawner : MonoBehaviour
     {
         Instantiate(enemyPrefab, starterPoint.position, starterPoint.rotation);
 
+    }
+
+    public void nextWaveTrigger()
+    {
+        nextWave.gameObject.SetActive(false);
+        countdown = -1f;    
     }
 
 }
