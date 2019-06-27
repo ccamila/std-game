@@ -34,7 +34,7 @@ public class InstantiateObjectAtSpace : MonoBehaviour
       
         if (Physics.Raycast(ray, out hit) && buildManager.CanBuild )
         {
-            Collider[] hitColliders = Physics.OverlapBox(hit.point, buildManager.standardTurretPrefab.transform.localScale/2, Quaternion.identity, layerMask);
+            Collider[] hitColliders = Physics.OverlapBox(hit.point, buildManager.getTurretToBuild().prefab.transform.localScale/2, Quaternion.identity, layerMask);
             if (hitColliders.Length == 0 && !hit.collider.transform.gameObject.GetComponentInChildren<MeshCollider>() )
             {
                 buildManager.BuildTurretOn(hit.point);

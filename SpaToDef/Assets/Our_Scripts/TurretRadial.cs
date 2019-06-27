@@ -14,6 +14,7 @@ public class TurretRadial : MonoBehaviour
     private float range;
     public string enemyTag = "Enemy";
     
+    
    
     public TurretUI turretUI;
     private ParticleSystem ps;
@@ -28,8 +29,7 @@ public class TurretRadial : MonoBehaviour
         ps.Stop();
         GameObject turretUIobject = GameObject.FindGameObjectWithTag("TurretUI");
         turretUI = turretUIobject.GetComponent<TurretUI>();
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
-        
+        InvokeRepeating("UpdateTarget", 0f, 0.5f);   
     }
 
 
@@ -79,9 +79,8 @@ public class TurretRadial : MonoBehaviour
         float tempo = 0f;
         while (tempo < 0.5f)
         {
-
             tempo += Time.deltaTime;
-            objCol.GetComponent<SphereCollider>().radius += 0.5f;
+            objCol.GetComponent<SphereCollider>().radius = Mathf.Lerp(0,range,0.5f);
             yield return null;
             objCol.GetComponent<SphereCollider>().radius = 0f;
         }

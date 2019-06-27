@@ -5,7 +5,8 @@ using UnityEngine;
 public class TurretStats : MonoBehaviour
 {
     public int sellCost = 50;
-    public readonly int upgradeCost;
     public float range;
-    
+    public bool isUpgraded;
+    [HideInInspector]
+    public TurretBlueprint blueprint;
 }

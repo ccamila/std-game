@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5046095119402522402}
   - component: {fileID: 8802580961457610678}
   m_Layer: 9
-  m_Name: StandardTower3 1
+  m_Name: StandardTower
   m_TagString: turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,8 +85,6 @@ MonoBehaviour:
     type: 3}
   fire: {fileID: 2802343082098416058}
   turretUI: {fileID: 0}
-  CircleRange: {fileID: 8316828043378360175, guid: cd42fe62bd0fd5a448a1f409d0518805,
-    type: 3}
 --- !u!114 &8802580961457610678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +98,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sellCost: 50
-  range: 1
+  range: 8
+  isUpgraded: 0
+  blueprint:
+    prefab: {fileID: 0}
+    cost: 0
+    upgradePrefab: {fileID: 0}
+    upgradeCost: 100
 --- !u!1 &3374063143954833949
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,8 +14,7 @@ public class BuildManager : MonoBehaviour
         instance = this;
     }
 
-    public GameObject standardTurretPrefab;
-    public GameObject radialTurretPrefab;
+    
 
     public bool CanBuild { get { return turretToBuild != null; } }
     
@@ -35,6 +34,22 @@ public class BuildManager : MonoBehaviour
         }
         PlayerStats.money -= turretToBuild.cost;
         GameObject turret = (GameObject) Instantiate(turretToBuild.prefab, pos, Quaternion.identity);
+        turret.GetComponent<TurretStats>().blueprint = getTurretToBuild();
+        turretToBuild = null;
+        turretList.Add(turret);
+        enable = false;
+    }
+
+    public void UpgradeTurret(Vector3 pos)
+    {
+        if (PlayerStats.money < turretToBuild.upgradeCost)
+        {
+            Debug.Log("Tratar falta de dinheiro");
+            return;
+        }
+        PlayerStats.money -= turretToBuild.upgradeCost;
+        GameObject turret = (GameObject)Instantiate(turretToBuild.upgradePrefab, pos, Quaternion.identity);
+        turret.GetComponent<TurretStats>().isUpgraded = true;
         turretToBuild = null;
         turretList.Add(turret);
         enable = false;
@@ -43,5 +58,10 @@ public class BuildManager : MonoBehaviour
     public void setSelectedTurret(GameObject turret)
     {
         selectedTurret = turret;
+    }
+
+    public TurretBlueprint getTurretToBuild()
+    {
+        return turretToBuild;
     }
 }
