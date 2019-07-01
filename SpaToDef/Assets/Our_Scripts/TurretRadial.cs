@@ -57,10 +57,12 @@ public class TurretRadial : MonoBehaviour
     }
     void Update()
     {
+        objCol.GetComponent<SphereCollider>().radius = 0;
         if (target == null) return;
         
-        if (tempoTiro >= 0.5f)
+        if (tempoTiro >= 1f)
         {
+
             Shoot();
             tempoTiro = 0f;
             
@@ -71,7 +73,9 @@ public class TurretRadial : MonoBehaviour
     void Shoot()
     {
         ps.Play();
-        StartCoroutine("IncreaseSize"); 
+        objCol.GetComponent<SphereCollider>().radius = range;
+
+        
     }
 
     IEnumerator IncreaseSize()

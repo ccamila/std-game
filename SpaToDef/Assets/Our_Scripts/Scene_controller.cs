@@ -24,7 +24,7 @@ public class Scene_controller : MonoBehaviour
 
     public void Level_1()
     {
-        SceneManager.LoadScene("Cena_teste_dif");
+        SceneManager.LoadScene("Level1");
     }
 
     public void SelectLevel()

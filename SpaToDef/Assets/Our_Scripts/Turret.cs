@@ -5,7 +5,7 @@ using UnityEngine;
 public class Turret : MonoBehaviour{
 
     //Atributos
-    public float fireRate = 1f;
+    public float fireRate;
     private float fireCountdown = 0f;
 
     //Unity

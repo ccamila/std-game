@@ -7,11 +7,13 @@ public class Enemy : MonoBehaviour
     public float speed = 2f;
 
     private Transform target;
-    private int wavepointIndex = 0;
+    public int wavepointIndex = 0;
+    public GameObject nextEnemy;
+    public int value;
 
     void Start(){
 
-        target = Waypoints.points[0]; //Vetor de "Ways"
+        target = Waypoints.points[wavepointIndex]; //Vetor de "Ways"
 
     }
     void Update()
@@ -45,8 +47,14 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        if(nextEnemy != null)
+        {
+            GameObject newEnemy= Instantiate(nextEnemy,transform.position,transform.rotation);
+            newEnemy.GetComponent<Enemy>().wavepointIndex = wavepointIndex;
+            
+        }
         Destroy(gameObject);
-        PlayerStats.money += 100;
+        PlayerStats.money += value;
     }
 }
 
