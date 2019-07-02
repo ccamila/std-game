@@ -17,13 +17,15 @@ public class Scene_controller : MonoBehaviour
         
     }
 
-    static public void Menu()
+    public void Menu()
     {
-        SceneManager.LoadScene("Menu");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Scenes/Menu");
     }
 
     public void Level_1()
     {
+        Time.timeScale = 3f;
         SceneManager.LoadScene("Level1");
     }
 
