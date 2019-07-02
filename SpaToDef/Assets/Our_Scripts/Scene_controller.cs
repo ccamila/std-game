@@ -25,7 +25,7 @@ public class Scene_controller : MonoBehaviour
 
     public void Level_1()
     {
-        Time.timeScale = 3f;
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Level1");
     }
 
