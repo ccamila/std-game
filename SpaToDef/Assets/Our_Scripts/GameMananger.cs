@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameMananger : MonoBehaviour
 {
-    private bool gameEnded = false;
+    public static bool gameEnded = false;
     public GameObject gameOverUI;
     void Update()
     {
@@ -17,6 +17,9 @@ public class GameMananger : MonoBehaviour
     void EndGame()
     {
         gameEnded = true;
+        
         gameOverUI.SetActive(true);
+
+             
     }
 }

@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
     void EndPath()
     {
         PlayerStats.Lifes = PlayerStats.Lifes - 1;
-        Debug.Log(PlayerStats.Lifes);
+        Debug.Log("Enemy: " + PlayerStats.Lifes);
         Destroy(gameObject);
     }
 
@@ -55,6 +55,7 @@ public class Enemy : MonoBehaviour
         }
         Destroy(gameObject);
         PlayerStats.money += value;
+        
     }
 }
 

@@ -13,7 +13,9 @@ public class TurretUI : MonoBehaviour
     BuildManager buildManager;
     public Text upgradeCost;
     public Text sellCost;
+    public GameObject sellFX;
     
+
 
     private void Start()
     {
@@ -61,6 +63,7 @@ public class TurretUI : MonoBehaviour
     {
         TurretStats turretStats = target.GetComponent<TurretStats>();
         PlayerStats.money += turretStats.sellCost;
+        GameObject fxInst = (GameObject)Instantiate(sellFX, transform.position, transform.rotation);
         Destroy(target);
         DeselectTurret();
     }

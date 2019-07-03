@@ -10,8 +10,7 @@ public class MoneyUI : MonoBehaviour
     
 
     // Tirar do update e ser alterado quando for acionado
-    void Update()
-    {
+    void Update(){
         moneyText.text = "$ " + PlayerStats.money.ToString();
     }
 }

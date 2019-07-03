@@ -29,7 +29,7 @@ public class BuildManager : MonoBehaviour
     {
         if(PlayerStats.money < turretToBuild.cost)
         {
-            Debug.Log("Tratar falta de dinheiro");
+            Debug.Log("Build Manager: Tratar falta de dinheiro");
             return;
         }
         PlayerStats.money -= turretToBuild.cost;
@@ -44,7 +44,7 @@ public class BuildManager : MonoBehaviour
     {
         if (PlayerStats.money < turretToBuild.upgradeCost)
         {
-            Debug.Log("Tratar falta de dinheiro");
+            Debug.Log("Build Manager: Tratar falta de dinheiro");
             return;
         }
         PlayerStats.money -= turretToBuild.upgradeCost;

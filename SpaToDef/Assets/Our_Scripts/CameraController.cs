@@ -15,6 +15,10 @@ public class CameraController : MonoBehaviour{
 
     void Update()
     {
+        if (GameMananger.gameEnded){
+            this.enabled = false;
+        }
+
         if (Input.GetMouseButton(0)) allowMovement = !allowMovement;
         if (!allowMovement) return;
 

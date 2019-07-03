@@ -5,6 +5,7 @@ public class Shop : MonoBehaviour
 {
     public TurretBlueprint standardTurret;
     public TurretBlueprint radialTurret;
+    public TurretBlueprint laserTurret;
 
     BuildManager buildManager;
 
@@ -12,6 +13,7 @@ public class Shop : MonoBehaviour
     public ChangeColor changeColor;
     public GameObject standardTurretButton;
     public GameObject radialTurretButton;
+    public GameObject laserTurretButton;
     
 
 
@@ -37,4 +39,13 @@ public class Shop : MonoBehaviour
         changeColor.SelectedColor(radialTurretButton);
     }
 
+    public void SelectlLaserTurret()
+    {
+
+        buildManager.SelectTurretToBuild(laserTurret);
+        buildManager.enable = true;
+        changeColor.SelectedColor(laserTurretButton);
+    }
+
+    
 }

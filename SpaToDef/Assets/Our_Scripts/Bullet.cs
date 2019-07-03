@@ -27,7 +27,8 @@ public class Bullet : MonoBehaviour{
             Hit();
             return;
         }
-        transform.Translate(dir.normalized * distance, Space.World); //Mover a umavelocidade constante
+
+        transform.Translate(dir.normalized * distance, Space.World); //Mover a uma velocidade constante
     }
 
     void Hit(){
