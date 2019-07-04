@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 2f;
+    public float startSpeed = 2f;
+    public float speed;
 
     private Transform target;
     public int wavepointIndex = 0;
@@ -15,6 +16,7 @@ public class Enemy : MonoBehaviour
     void Start(){
 
         target = Waypoints.points[wavepointIndex]; //Vetor de "Ways"
+        speed = startSpeed;
 
     }
     void Update()
@@ -26,6 +28,7 @@ public class Enemy : MonoBehaviour
             GetNextWayPoint();
 
         }
+        speed = startSpeed;
 
     }
 
@@ -55,13 +58,19 @@ public class Enemy : MonoBehaviour
             newEnemy.GetComponent<Enemy>().wavepointIndex = wavepointIndex;
             
         }
-
+        else
+        {
+            WaveSpawner.enemiesAlive--;
+        }
         
-        
-        WaveSpawner.enemiesAlive--;
         PlayerStats.money += value;
         Destroy(gameObject);
 
+    }
+
+    public void Slow(float slowAmount)
+    {
+        speed = speed * (1f - slowAmount);
     }
 }
 

@@ -10,6 +10,10 @@ public class Turret : MonoBehaviour{
 
     public bool useLaser = false;
     public LineRenderer lineRenderer;
+    public ParticleSystem impactEffect;
+    public Light impactLight;
+
+    public float slowPct = .5f;
 
 
     //Unity
@@ -21,6 +25,8 @@ public class Turret : MonoBehaviour{
     public GameObject bulletPrefab;
     public Transform fire;
     public TurretUI turretUI;
+
+    private Enemy targetEnemy;
     
 
     private void Start()
@@ -51,6 +57,7 @@ public class Turret : MonoBehaviour{
             if (nearestEnemy != null && shortDistance <= range)
             {
                 target = nearestEnemy.transform;
+                targetEnemy = nearestEnemy.GetComponent<Enemy>();
             }
             else target = null;
 
@@ -99,7 +106,7 @@ public class Turret : MonoBehaviour{
 
     void Laser()
     {
-        
+        targetEnemy.Slow(slowPct);
 
         if (!lineRenderer.enabled){
             lineRenderer.enabled = true;

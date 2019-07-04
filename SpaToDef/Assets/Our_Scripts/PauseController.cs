@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PauseController : MonoBehaviour
 {
-    public GameObject ui;
+    public GameObject pauseUI;
+    public GameObject generalUI;
     public void Toggle()
     {
-        ui.SetActive(!ui.activeSelf);
-        if (ui.activeSelf)
+        pauseUI.SetActive(!pauseUI.activeSelf);
+        generalUI.SetActive(!generalUI.activeSelf);
+        if (pauseUI.activeSelf)
         {
             Time.timeScale = 0f;
         }

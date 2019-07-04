@@ -42,11 +42,7 @@ public class BuildManager : MonoBehaviour
 
     public void UpgradeTurret(Vector3 pos)
     {
-        if (PlayerStats.money < turretToBuild.upgradeCost)
-        {
-            Debug.Log("Build Manager: Tratar falta de dinheiro");
-            return;
-        }
+       
         PlayerStats.money -= turretToBuild.upgradeCost;
         GameObject turret = (GameObject)Instantiate(turretToBuild.upgradePrefab, pos, Quaternion.identity);
         turret.GetComponent<TurretStats>().isUpgraded = true;

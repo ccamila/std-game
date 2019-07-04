@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 5511150310019978561}
   - component: {fileID: 5530993998888139244}
   - component: {fileID: 6018742528828482887}
+  - component: {fileID: 3050942207887943461}
   m_Layer: 0
   m_Name: Turret Variant
   m_TagString: Untagged
@@ -105,7 +106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4078381930264740325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.024, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4078381930264583617}
@@ -128,6 +129,9 @@ MonoBehaviour:
   fireRate: 1
   useLaser: 1
   lineRenderer: {fileID: 6018742528828482887}
+  impactEffect: {fileID: 0}
+  impactLight: {fileID: 0}
+  slowPct: 0.5
   enemyTag: Enemy
   partToRotate: {fileID: 427466613768295594}
   turnSpeed: 20
@@ -249,6 +253,19 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!65 &3050942207887943461
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4078381930264740325}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4078381930264740327
 GameObject:
   m_ObjectHideFlags: 0

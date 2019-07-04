@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameMananger : MonoBehaviour
 {
     public static bool gameEnded;
-
+    public GameObject generalCanvas;
     public GameObject gameOverUI;
     public GameObject gameWonUI;
 
@@ -28,6 +28,9 @@ public class GameMananger : MonoBehaviour
     {
         gameEnded = true;
         gameOverUI.SetActive(true);
+        generalCanvas.SetActive(false);
+        Time.timeScale = 0f;
+        
 
              
     }
@@ -36,5 +39,8 @@ public class GameMananger : MonoBehaviour
     {
         gameEnded = true;
         gameWonUI.SetActive(true);
+        generalCanvas.SetActive(false);
+        Time.timeScale = 0f;
+        
     }
 }

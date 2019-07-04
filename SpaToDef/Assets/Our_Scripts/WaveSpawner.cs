@@ -8,6 +8,9 @@ public class WaveSpawner : MonoBehaviour
     //public Transform enemyPrefab;
     public static int enemiesAlive;
 
+    public Text waveAtual;
+
+
     public Wave[] waves;
 
     public Transform starterPoint;
@@ -28,6 +31,7 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
+        waveAtual.text = waveNumber.ToString();
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (enemiesAlive > 0)
         {
@@ -40,20 +44,18 @@ public class WaveSpawner : MonoBehaviour
             this.enabled = false;
          
         }
-
+        nextWave.gameObject.SetActive(false);
         if (countdown <= 0f)
         {
             waveCount.gameObject.SetActive(false);
             StartCoroutine(Spawn());
             countdown = timeWaves;
+            
             return;
         }
-        if (enemies.Length == 0)
-        {
-            waveCount.gameObject.SetActive(true);
-            countdown -= Time.deltaTime;
-            nextWave.gameObject.SetActive(true);  
-        }
+        waveCount.gameObject.SetActive(true);
+        countdown -= Time.deltaTime;
+        nextWave.gameObject.SetActive(true);
         waveCount.text = Mathf.Round(countdown).ToString();
     }
 
@@ -68,7 +70,9 @@ public class WaveSpawner : MonoBehaviour
 
         for (int i = 0; i < wave.count; i++)
         {
+
             SpawnEnemy(wave.enemy);
+            
             yield return new WaitForSeconds(1f/ wave.rate);
         }
 
@@ -92,6 +96,7 @@ public class WaveSpawner : MonoBehaviour
             nextWave.gameObject.SetActive(false);
         }
         nextWave.gameObject.SetActive(false);
+        waveNumber += 1;
         countdown = -1f;    
     }
 

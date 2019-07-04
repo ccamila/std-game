@@ -70,7 +70,7 @@ public class TurretUI : MonoBehaviour
 
     public void UpgradeSelected()
     {
-        if(!target.GetComponent<TurretStats>().isUpgraded)
+        if(!target.GetComponent<TurretStats>().isUpgraded && PlayerStats.money >= target.GetComponent<TurretStats>().blueprint.upgradeCost)
         {
             Vector3 pos = target.transform.position;
             buildManager.SelectTurretToBuild(target.GetComponent<TurretStats>().blueprint);
