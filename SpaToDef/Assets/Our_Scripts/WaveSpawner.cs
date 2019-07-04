@@ -97,6 +97,7 @@ public class WaveSpawner : MonoBehaviour
         }
         nextWave.gameObject.SetActive(false);
         waveNumber += 1;
+        if (countdown > 0) PlayerStats.money += 10 * waveNumber;
         countdown = -1f;    
     }
 

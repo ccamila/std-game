@@ -43,4 +43,16 @@ public class GameMananger : MonoBehaviour
         Time.timeScale = 0f;
         
     }
+
+    public void Toggle()
+    {
+        if(Time.timeScale == 1)
+        {
+            Time.timeScale = 3;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
 }

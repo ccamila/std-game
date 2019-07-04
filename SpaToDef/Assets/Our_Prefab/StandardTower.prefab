@@ -80,6 +80,9 @@ MonoBehaviour:
   fireRate: 1
   useLaser: 0
   lineRenderer: {fileID: 0}
+  impactEffect: {fileID: 0}
+  impactLight: {fileID: 0}
+  slowPct: 0.5
   enemyTag: Enemy
   partToRotate: {fileID: 135134814503073530}
   turnSpeed: 10
@@ -99,8 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3c5ee257f7e66d479538e3a8b42dbf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sellCost: 50
-  range: 8
+  sellCost: 80
+  range: 1.5
   isUpgraded: 0
   blueprint:
     prefab: {fileID: 0}

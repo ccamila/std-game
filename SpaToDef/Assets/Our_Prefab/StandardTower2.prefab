@@ -702,6 +702,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 2
+  useLaser: 0
+  lineRenderer: {fileID: 0}
+  impactEffect: {fileID: 0}
+  impactLight: {fileID: 0}
+  slowPct: 0.5
   enemyTag: Enemy
   partToRotate: {fileID: 8157586889459929197}
   turnSpeed: 20
@@ -722,7 +727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sellCost: 100
-  range: 8
+  range: 2.5
   isUpgraded: 1
   blueprint:
     prefab: {fileID: 0}

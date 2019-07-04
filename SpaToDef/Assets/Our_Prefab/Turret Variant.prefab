@@ -150,8 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3c5ee257f7e66d479538e3a8b42dbf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sellCost: 50
-  range: 100
+  sellCost: 80
+  range: 2
   isUpgraded: 0
   blueprint:
     prefab: {fileID: 0}
