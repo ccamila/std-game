@@ -112,9 +112,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  wavepointIndex: 0
   nextEnemy: {fileID: 1363651509913465954, guid: 1783d7361a43daf4482ed65e5afa6101,
     type: 3}
-  value: 200
+  value: 50
 --- !u!54 &4282023532479841270
 Rigidbody:
   m_ObjectHideFlags: 0

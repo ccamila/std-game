@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public int wavepointIndex = 0;
     public GameObject nextEnemy;
     public int value;
+    
 
     void Start(){
 
@@ -40,9 +41,10 @@ public class Enemy : MonoBehaviour
 
     void EndPath()
     {
-        PlayerStats.Lifes = PlayerStats.Lifes - 1;
-        Debug.Log("Enemy: " + PlayerStats.Lifes);
+        PlayerStats.Lifes = PlayerStats.Lifes - 1;       
         Destroy(gameObject);
+        WaveSpawner.enemiesAlive--;
+
     }
 
     public void Die()
@@ -53,9 +55,13 @@ public class Enemy : MonoBehaviour
             newEnemy.GetComponent<Enemy>().wavepointIndex = wavepointIndex;
             
         }
-        Destroy(gameObject);
-        PlayerStats.money += value;
+
         
+        
+        WaveSpawner.enemiesAlive--;
+        PlayerStats.money += value;
+        Destroy(gameObject);
+
     }
 }
 

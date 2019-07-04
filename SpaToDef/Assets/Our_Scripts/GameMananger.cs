@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class GameMananger : MonoBehaviour
 {
-    public static bool gameEnded = false;
+    public static bool gameEnded;
+
     public GameObject gameOverUI;
+    public GameObject gameWonUI;
+
+    void Start()
+    {
+        gameEnded = false;
+    }
+
+
+
     void Update()
     {
         if (gameEnded)
@@ -17,9 +27,14 @@ public class GameMananger : MonoBehaviour
     void EndGame()
     {
         gameEnded = true;
-        
         gameOverUI.SetActive(true);
 
              
+    }
+
+    public void WinLevel()
+    {
+        gameEnded = true;
+        gameWonUI.SetActive(true);
     }
 }

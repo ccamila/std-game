@@ -7,13 +7,17 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour{
     public Text roundsText;
 
+
+    //public SceneFader sceneFader;
+
+
     void OnEnable(){
         roundsText.text = PlayerStats.Rounds.ToString();
     }
 
     public  void Retry()
     {
-        //   SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Debug.Log("Função GameOver: Retry.");
     }
     

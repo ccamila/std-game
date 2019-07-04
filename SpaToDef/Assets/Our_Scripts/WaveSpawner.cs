@@ -5,7 +5,11 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
 
-    public Transform enemyPrefab;
+    //public Transform enemyPrefab;
+    public static int enemiesAlive;
+
+    public Wave[] waves;
+
     public Transform starterPoint;
 
     public float timeWaves = 5f; //Tempo entre as waves
@@ -15,6 +19,8 @@ public class WaveSpawner : MonoBehaviour
     public Text waveCount;
     public Button nextWave;
 
+    public GameMananger gameManager;
+
     private void Start()
     {
         countdown = timeWaves;
@@ -23,6 +29,18 @@ public class WaveSpawner : MonoBehaviour
     void Update()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (enemiesAlive > 0)
+        {
+            return;
+        }
+
+        if (waveNumber == waves.Length)
+        {
+            gameManager.WinLevel();
+            this.enabled = false;
+         
+        }
+
         if (countdown <= 0f)
         {
             waveCount.gameObject.SetActive(false);
@@ -41,24 +59,38 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        waveNumber++;
+
+
+
         PlayerStats.Rounds++;
-        for (int i = 0; i < waveNumber; i++)
+
+        Wave wave = waves[waveNumber];
+
+        for (int i = 0; i < wave.count; i++)
         {
-            SpawnEnemy();
-            yield return new WaitForSeconds(0.2f);
+            SpawnEnemy(wave.enemy);
+            yield return new WaitForSeconds(1f/ wave.rate);
         }
+
+        waveNumber++;
+
+
 
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(GameObject enemyPrefab)
     {
         Instantiate(enemyPrefab, starterPoint.position, starterPoint.rotation);
+        enemiesAlive++;
 
     }
 
     public void nextWaveTrigger()
     {
+        if (enemiesAlive > 0)
+        {
+            nextWave.gameObject.SetActive(false);
+        }
         nextWave.gameObject.SetActive(false);
         countdown = -1f;    
     }

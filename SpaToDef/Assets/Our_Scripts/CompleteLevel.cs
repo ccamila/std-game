@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class CompleteLevel : MonoBehaviour
 {
-    public Scene
-
-    void Start()
+   public void Continue()
     {
-        
-    }
+        //PlayerPrefs.SetInt("levelReached", levelToUnlock);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

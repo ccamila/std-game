@@ -78,6 +78,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 1
+  useLaser: 0
+  lineRenderer: {fileID: 0}
   enemyTag: Enemy
   partToRotate: {fileID: 135134814503073530}
   turnSpeed: 10
