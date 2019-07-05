@@ -572,9 +572,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '$120
-
-'
+  m_Text: $200
 --- !u!222 &140895004
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -768,21 +766,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 552698843}
     m_Modifications:
-    - target: {fileID: 7300584474433847973, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
-        type: 3}
-      propertyPath: m_Name
-      value: RadialTurretItem
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300584474433847973, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300584474433847973, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7300584474433847974, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -888,6 +871,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7300584474433847973, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
+        type: 3}
+      propertyPath: m_Name
+      value: RadialTurretItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300584474433847973, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300584474433847973, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7300584474433847968, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -989,7 +987,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1292,7 +1290,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1560,7 +1558,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -55.3, y: 124.4}
+  m_AnchoredPosition: {x: -55.3, y: 116}
   m_SizeDelta: {x: 50, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &455168511
@@ -2486,7 +2484,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91, y: 124}
+  m_AnchoredPosition: {x: -91, y: 116.4}
   m_SizeDelta: {x: 50, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &830409923
@@ -2962,7 +2960,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963523384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -399, y: 123.5, z: -8.264363}
+  m_LocalPosition: {x: -354, y: 109.4, z: -8.264363}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 64172383}
@@ -3093,7 +3091,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -5946,7 +5944,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: $100
+  m_Text: $150
 --- !u!222 &1579248146
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6456,7 +6454,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '$120
+  m_Text: '$150
 
 '
 --- !u!222 &1713260948
@@ -6559,21 +6557,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 552698843}
     m_Modifications:
-    - target: {fileID: 7300584474433847973, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
-        type: 3}
-      propertyPath: m_Name
-      value: LaserTurretItem
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300584474433847973, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300584474433847973, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7300584474433847974, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6692,6 +6675,21 @@ PrefabInstance:
     - target: {fileID: 7300584474433847974, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
         type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300584474433847973, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
+        type: 3}
+      propertyPath: m_Name
+      value: LaserTurretItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300584474433847973, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300584474433847973, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300584474433847968, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
@@ -8003,16 +8001,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 552698843}
     m_Modifications:
-    - target: {fileID: 7300584474433847973, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
-        type: 3}
-      propertyPath: m_Name
-      value: StandardTurretItem
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300584474433847973, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 7300584474433847974, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8117,6 +8105,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300584474433847973, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
+        type: 3}
+      propertyPath: m_Name
+      value: StandardTurretItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300584474433847973, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7300584474433847968, guid: 556c9fcaed32c4448a9fdb5d58c85fae,
         type: 3}
